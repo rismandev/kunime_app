@@ -6,7 +6,7 @@ KunimeApp adalah Aplikasi yang berisi Kuis Anime. Aplikasi ini dibuat khusus unt
 
 ## Contributtors
 
-<img src="https://github.com/rismandev/kost/blob/master/src/assets/demo/me.jpg" width="100" alt=""/>
+<img src="https://media-exp1.licdn.com/dms/image/C5603AQHlybPo3Yfdzw/profile-displayphoto-shrink_100_100/0/1602769431939?e=1622678400&v=beta&t=YNrg1JXMD0sejVAKafBf1K47NWqvXdxjykMhFV2CdBU" width="100" alt=""/>
 
 Risman Abdilah
 
