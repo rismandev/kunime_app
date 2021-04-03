@@ -3,3 +3,10 @@ enum AnswerType {
   Correct,
   Wrong,
 }
+
+enum STATUS {
+  Initial,
+  Loading,
+  Error,
+  Success,
+}

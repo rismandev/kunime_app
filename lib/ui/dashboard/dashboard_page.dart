@@ -56,7 +56,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(bottom: 25),
+                margin: EdgeInsets.only(bottom: 10),
                 child: Text(
                   "Pilih Anime untuk memulai Kuis",
                   textAlign: TextAlign.center,
@@ -82,7 +82,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         crossAxisCount: 2,
                         crossAxisSpacing: 25,
                         mainAxisSpacing: 25,
-                        mainAxisExtent: 250,
+                        mainAxisExtent: 230,
                       ),
                       itemBuilder: (BuildContext context, int index) {
                         CategoryModel _item = quizProvider.categories[index];

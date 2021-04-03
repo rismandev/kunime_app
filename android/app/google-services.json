@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "874148490032",
+    "project_id": "kunimeapp",
+    "storage_bucket": "kunimeapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874148490032:android:8973acd979edafe02ff6f5",
+        "android_client_info": {
+          "package_name": "com.sundatech.kunimeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874148490032-lq7659vcnf7uum7epjp8pql5plh0p5de.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNtJOXWptUJ6hGdrFOqirX7c4VVCMf3kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874148490032-lq7659vcnf7uum7epjp8pql5plh0p5de.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "874148490032-3mp5a7c1fntcqtn12ifp4d96qleggd02.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sundatech.kunimeapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

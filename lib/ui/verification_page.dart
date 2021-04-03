@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:kunime_app/common/enum.dart';
 import 'package:kunime_app/common/styles.dart';
 import 'package:kunime_app/data/provider/user_provider.dart';
 import 'package:kunime_app/widgets/button/disable_button.dart';
@@ -50,11 +51,9 @@ class _VerificationPageState extends State<VerificationPage> {
   }
 
   void _handleChangeOTP(String code) async {
-    if (code.length == 4) {
-      if (code == "1234") {
-        if (_userProvider != null) {
-          _userProvider.setPhoneToStorage();
-        }
+    if (code.length == 6) {
+      if (_userProvider != null && _userProvider.isVerifyOTP(code)) {
+        _userProvider.setPhoneToStorage();
       } else {
         _showMessage("Kode verifikasi salah!", isError: true);
         setState(() {
@@ -121,7 +120,7 @@ class _VerificationPageState extends State<VerificationPage> {
                   Container(
                     margin: EdgeInsets.all(25),
                     child: PinInputTextField(
-                      pinLength: 4,
+                      pinLength: 6,
                       enabled: true,
                       controller: _otpController,
                       keyboardType: TextInputType.number,
@@ -142,14 +141,31 @@ class _VerificationPageState extends State<VerificationPage> {
                   ? DisableButton(
                       text: "Kirim ulang ($_start)",
                     )
-                  : PrimaryButton(
-                      text: "Kirim ulang",
-                      onPressed: () {
-                        _showMessage("Kode verifikasi telah terkirim!");
-                        setState(() {
-                          _start = 60;
-                        });
-                        this._startTimer();
+                  : Consumer<UserProvider>(
+                      builder: (context, provider, child) {
+                        if (provider.isLoading == STATUS.Loading) {
+                          return Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CircularProgressIndicator(
+                                backgroundColor: primaryColor,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    secondaryColor),
+                              ),
+                            ],
+                          );
+                        }
+                        return PrimaryButton(
+                          text: "Kirim ulang",
+                          onPressed: () {
+                            provider.setUserPhone(isResend: true);
+                            _showMessage("Kode verifikasi telah terkirim!");
+                            setState(() {
+                              _start = 60;
+                            });
+                            this._startTimer();
+                          },
+                        );
                       },
                     ),
             ),

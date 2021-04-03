@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:kunime_app/common/navigation.dart';
 import 'package:kunime_app/common/styles.dart';
@@ -22,6 +23,15 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _navigate() async {
+    // INITIALIZE FIREBASE
+    await Firebase.initializeApp(
+      options: FirebaseOptions(
+        apiKey: 'AIzaSyCNtJOXWptUJ6hGdrFOqirX7c4VVCMf3kQ',
+        appId: '1:874148490032:ios:6896fd3470d6d4a52ff6f5',
+        messagingSenderId: '874148490032',
+        projectId: 'kunimeapp',
+      ),
+    );
     // GET USER PHONE
     bool _isLoggedIn = await _preferences.isUserPhone;
     // DURATION
